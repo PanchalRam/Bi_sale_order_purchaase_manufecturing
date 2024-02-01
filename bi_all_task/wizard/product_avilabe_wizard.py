@@ -2,13 +2,11 @@ from odoo import fields, models, api, _
 
 
 class ProductAvailableQuantityWizard(models.TransientModel):
-    _name = "product.available.quantity.wizard"
+    _name = "product.available.wizard"
     _description = "Product Available Quantity Wizard"
 
     stocck_warehouse_ids = fields.Many2many('stock.quant')
     product_main_id = fields.Many2one('product.product', string='Product Name')
-
-
 
     def default_get(self, fields):
         product_list = []

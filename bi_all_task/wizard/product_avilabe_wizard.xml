@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="view_product_available_quantity_wizard_form" model="ir.ui.view">
+    <record id="view_product_available_quantity_form" model="ir.ui.view">
         <field name="name">product.available.quantity.form</field>
-        <field name="model">product.available.quantity.wizard</field>
+        <field name="model">product.available.wizard</field>
         <field name="arch" type="xml">
-            <form string="Product Available Quantity" readonly="1" >
+            <form string="Product Available Quantity" >
                 <group>
-                    <field name="product_main_id" readonly="1"/>
+                    <field name="product_main_id" groups="bi_all_task.group_product"/>
                 </group>
-                <field name="stocck_warehouse_ids" readonly="1">
+                <field name="stocck_warehouse_ids">
                     <tree readonly="1">
-                        <field name="product_id" readonly="1"/>
-                        <field name="available_quantity" readonly="1"/>
-                        <field name="location_id" readonly="1"/>
+                        <field name="product_id" />
+                        <field name="available_quantity" />
+                        <field name="location_id" />
                     </tree>
                 </field>
                 <footer>
@@ -22,12 +22,12 @@
         </field>
     </record>
 
-    <record id="action_product_available_wizard" model="ir.actions.act_window">
+    <record id="action_product_available" model="ir.actions.act_window">
         <field name="name">Products Available Quantity</field>
-        <field name="res_model">product.available.quantity.wizard</field>
+        <field name="res_model">product.available.wizard</field>
         <field name="view_mode">form</field>
         <field name="type">ir.actions.act_window</field>
         <field name="target">new</field>
-        <field name="view_id" ref="view_product_available_quantity_wizard_form"/>
+        <field name="view_id" ref="bi_all_task.view_product_available_quantity_form"/>
     </record>
 </odoo>

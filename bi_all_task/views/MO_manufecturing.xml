@@ -9,7 +9,7 @@
 
                 <xpath expr="//field[@name='move_finished_ids']" position="after">                    
                     <field name="user_mo" groups="bi_all_task.group_Mo_production"/>
-                    <field name="all_users" widget="many2many_tags" groups="bi_all_task.group_Mo_production" attrs="{'invisible':[('user_mo','!=',True)]}" />
+                    <field name="all_users_ids" widget="many2many_tags" groups="bi_all_task.group_Mo_production" attrs="{'invisible':[('user_mo','!=',True)]}" />
                 </xpath>
             </field>
         </record>

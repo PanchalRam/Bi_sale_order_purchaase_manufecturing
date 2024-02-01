@@ -3,7 +3,7 @@ from odoo.exceptions import ValidationError
 
 
 class Product_Product(models.Model):
-    _inherit = 'product.product'
+    _inherit = 'product.template'
 
     min_amount = fields.Float(string="Max Amount")
     max_amount = fields.Float(string="Min Amount")
@@ -31,4 +31,16 @@ class Sale_Order(models.Model):
                     print("::::::::::::::::::in the function::::::::::::::::::")
                     raise ValidationError(_('Price Unit must be within minprice & max price'))
             return  super(Sale_Order,self).action_confirm()
+    @api.model_create_multi
+    def create(self, vals_list):
+        created_records = super(Sale_Order, self).create(vals_list)
+        print(":::::::::::::::CREATE::::::::::;")
+        for rec in created_records:
+            for line in rec.order_line:
+                if line.price_unit <= line.maxamount or line.price_unit >= line.minamount:
+                    print("::::::::::::::::::in the function::::::::::::::::::")
+                    raise ValidationError(_('Price Unit must be within minprice & max price'))
+        return created_records
+
+
     
