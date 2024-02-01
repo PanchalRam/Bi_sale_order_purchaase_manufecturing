@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_Mo_production" model="res.groups">
+            <field name="name">user_restriction_mo</field>
+            <field name="category_id" />
+        </record>
+    </data>
+
+</odoo>
+

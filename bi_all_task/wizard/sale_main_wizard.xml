@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="details_clinet_from" model="ir.ui.view">
+        <field name="name">details_clinet_from</field>
+        <field name="model">sale.product.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="res_user_id"/>
+                        <field name="all_names_id" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button style='padding-top:10px' name='action_confirm' type='object' string='Update' />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="details_client_main_action" model="ir.actions.act_window">
+        <field name="name">Details Client</field>
+        <field name="res_model">sale.product.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

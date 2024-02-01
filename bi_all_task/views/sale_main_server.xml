@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="bi_action_bedr" model="ir.actions.act_window">
+        <field name="name">Create sale order</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.product.wizard</field>
+        <field name="binding_view_types">tree,form</field>
+        <field name="binding_model_id" ref="model_product_product"/>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

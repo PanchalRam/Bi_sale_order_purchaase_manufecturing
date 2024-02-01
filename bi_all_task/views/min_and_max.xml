@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+  <record id="product_normal_form_view_inherit" model="ir.ui.view">
+      <field name="name">product.product.inherited</field>
+      <field name="model">product.product</field>
+      <field name="type">form</field>
+      <field name="inherit_id" ref="product.product_normal_form_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='detailed_type']" position="after">
+          <field name="min_amount" />
+          <field name="max_amount" /> 
+      </xpath> 
+      </field>
+  </record>
+
+  <record id="sale_view_order_form_inherit" model="ir.ui.view">
+      <field name="name">sale.order.inherited</field>
+      <field name="model">sale.order</field>
+      <field name="type">form</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='order_line']//tree//field[@name='qty_invoiced']" position="after">
+          <field name="minamount" />
+          <field name="maxamount" /> 
+      </xpath> 
+      </field>
+  </record>
+
+</odoo>
